@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#initialize array
+arr=(11 22 33 44 55 66 77 88 99)
+
+#read the key for search
+echo "Enter the key to search:"
+read key
+
+#initialize flag variable
+flag=0
+
+#for loop to perform linear search
+for i in "${arr[@]}"
+do
+    if [ $i -eq $key ]
+    then
+        flag=1
+        break
+    fi
+done
+
+#check if key is found or not
+if [ $flag -eq 1 ]
+then
+    echo "Key found"
+else
+    echo "Key not found"
+fi
+
+#end of script
