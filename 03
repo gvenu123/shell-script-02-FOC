@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Enter an integer number: "
+read num
+
+# initialize sum variable
+sum=0
+
+# loop through each digit of the number
+while [ $num -gt 0 ]; do
+    digit=$(( num % 10 ))
+    sum=$(( sum + digit ))
+    num=$(( num / 10 ))
+done
+
+echo "The sum of the digits is $sum"
