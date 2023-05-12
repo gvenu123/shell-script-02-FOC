@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the angle in radians:"
+read x
+
+n=0
+sum=0
+term=$x
+
+while (( $(bc <<< "$term != 0") ))
+do
+    sign=$(bc <<< "scale=0; (-1)^$n")
+    fact=$(seq -s '*' 1 2 $((2*n+1)) | bc)
+    term=$(echo "scale=10; $sign * $x^$(($n*2+1)) / $fact" | bc)
+    sum=$(echo "scale=10; $sum + $term" | bc)
+    n=$((n+1))
+done
+
+echo "sin($x) = $sum"
