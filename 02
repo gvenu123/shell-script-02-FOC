@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Set initial values for a, b, and c
+a=10
+b=20
+c=30
+
+echo "Before swapping: a=$a, b=$b, c=$c"
+
+# Swap a to b, b to c, and c to a
+temp=$b
+b=$a
+a=$c
+c=$temp
+
+echo "After swapping: a=$a, b=$b, c=$c"
