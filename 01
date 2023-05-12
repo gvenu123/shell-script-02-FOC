@@ -1,0 +1,27 @@
+#!/bin/bash
+
+Shell script to Find the biggest out of n integers
+echo "Enter the total count of integers: "
+read n
+
+echo "Enter the integers: "
+read num
+max=$num
+
+i=2
+while [ $i -le $n ]
+do
+echo "Enter number $i: "
+read num
+
+bash
+Copy code
+if [ $num -gt $max ]
+then
+    max=$num
+fi
+
+i=$((i+1))
+done
+
+echo "The biggest integer among all is: $max"
